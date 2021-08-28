@@ -22,5 +22,8 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "telegram-bot-api": "^2.0.1"
+  },
+  "engines": {
+    "node": "8.x"
   }
 }
