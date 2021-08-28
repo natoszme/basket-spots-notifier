@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "now": "node index.js"
+    "now": "node index.js",
+    "scheduled": "node scheduled.js"
   },
   "author": "",
   "license": "ISC",
