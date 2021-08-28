@@ -1,0 +1,25 @@
+{
+  "name": "basketspotschecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/register": "^7.15.3",
+    "bluebird": "^3.7.2",
+    "dotenv": "^10.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "telegram-bot-api": "^2.0.1"
+  }
+}
