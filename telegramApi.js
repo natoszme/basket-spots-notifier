@@ -2,6 +2,7 @@ import _ from "lodash";
 import Promise from "bluebird";
 import TelegramBotApi from 'telegram-bot-api';
 import config from "./config";
+import { isWeekendDay } from "./helpers/dates";
 const { telegramApi } = config;
 
 class TelegramApi {
@@ -22,13 +23,16 @@ class TelegramApi {
       is_anonymous: "false",
       allows_multiple_answers: "true"
     };
-
+    
     return this.api.sendPoll(options);
   }
 
   _pollOptions(courtsWithSpots) {
     const { pollMaxOptions } = telegramApi;
+
     return _(courtsWithSpots).flatMap(({ court, spots }) => _.map(spots, spot => ({ court, spot })))
+    .partition(({ spot }) => isWeekendDay(spot))
+    .flatMap()
     .take(pollMaxOptions)
     .map(::this._spotOption)
     .value();
