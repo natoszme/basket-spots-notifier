@@ -35,7 +35,7 @@ class TelegramApi {
   }
 
   _spotOption({ court: { name }, spot }) {
-    const loweredOption = `${spot.format("dddd DD/MM")} a las ${spot.format("HH:mm")} en ${name}`;
+    const loweredOption = `${spot.format("dddd D/M")} a las ${spot.format("HH:mm")} en ${name}`;
     return _.upperFirst(loweredOption);
   }
 }
