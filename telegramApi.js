@@ -8,7 +8,6 @@ class TelegramApi {
   constructor() {
     const { token } = telegramApi;
     this.api = new TelegramBotApi({ token });
-    this._spotOption = this._spotOption.bind(this);
   }
 
   send(courtsWithSpots) {
@@ -31,7 +30,7 @@ class TelegramApi {
     const { pollMaxOptions } = telegramApi;
     return _(courtsWithSpots).flatMap(({ court, spots }) => _.map(spots, spot => ({ court, spot })))
     .take(pollMaxOptions)
-    .map(this._spotOption)
+    .map(::this._spotOption)
     .value();
   }
 

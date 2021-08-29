@@ -26,5 +26,8 @@
   },
   "engines": {
     "node": "8.x"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-function-bind": "^7.14.5"
   }
 }
