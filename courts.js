@@ -8,10 +8,10 @@ export default [
     name: "Costa Rica",
     id: 3786,
     fieldId: 2937
-  },
+  }/*,
   {
     name: "Martin Fierro",
     id: 3136,
     fieldId: 2296
-  }
+  }*/
 ];
