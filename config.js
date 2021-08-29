@@ -3,7 +3,7 @@ export default {
   telegramApi: {
     token: process.env.TELEGRAM_API_TOKEN,
     groupId: process.env.TELEGRAM_API_GROUP_ID,
-    pollQuestion: process.env.TELEGRAM_API_POLL_QUESTION || "Qué hora/lugar te viene bien para armar a un partidito?",
+    pollQuestion: process.env.TELEGRAM_API_POLL_QUESTION || "Qué hora/lugar te viene bien para armar un partidito?",
     pollMaxOptions: parseInt(process.env.TELEGRAM_API_POLL_MAX_OPTIONS) || 10
   }
 };
