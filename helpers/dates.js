@@ -1,3 +1,6 @@
+import config from "../config";
+const { weekDayHourMin, weekDayHourMax, weekendDayHourMin, weekendDayHourMax } = config.courts.dates;
+
 const _isWeekDay = date => {
   const numberOfDay = date.day();
   return numberOfDay >= 1 && numberOfDay <= 5;
@@ -5,5 +8,5 @@ const _isWeekDay = date => {
 
 export const isWeekendDay = date => !_isWeekDay(date);
 
-export const isValidWeekDay = date => _isWeekDay(date) && date.hour() >= 18 && date.hour() <= 22;
-export const isValidWeekendDay = date => isWeekendDay(date) && date.hour() >= 10 && date.hour() <= 16;
+export const isValidWeekDay = date => _isWeekDay(date) && date.hour() >= weekDayHourMin && date.hour() <= weekDayHourMax;
+export const isValidWeekendDay = date => isWeekendDay(date) && date.hour() >= weekendDayHourMin && date.hour() <= weekendDayHourMax;
