@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "now": "node index.js",
-    "scheduled": "node scheduled.js"
+    "scheduled": "node scheduled.js",
+    "configure": "heroku config:set $(cat production.env | sed '/^$/d; /#[[:print:]]*$/d')",
+    "get-config": "heroku config -s > local.env"
   },
   "author": "",
   "license": "ISC",
