@@ -3,7 +3,7 @@ import Promise from "bluebird";
 import TelegramBotApi from 'telegram-bot-api';
 import config from "./config";
 import { isWeekendDay } from "./helpers/dates";
-const { telegramApi } = config;
+const { telegramApi, dates } = config;
 
 class TelegramApi {
   constructor() {
@@ -31,7 +31,7 @@ class TelegramApi {
     const { pollMaxOptions } = telegramApi;
 
     return _(courtsWithSpots).flatMap(({ court, spots }) => _.map(spots, spot => ({ court, spot })))
-    .partition(({ spot }) => isWeekendDay(spot))
+    .partition(({ spot }) => dates.priorizeWeekends && isWeekendDay(spot))
     .flatMap()
     .take(pollMaxOptions)
     .map(::this._spotOption)
