@@ -1,5 +1,5 @@
 import config from "../config";
-const { weekDayHourMin, weekDayHourMax, weekendDayHourMin, weekendDayHourMax } = config.courts.dates;
+const { weekDayHourMin, weekDayHourMax, weekendDayHourMin, weekendDayHourMax } = config.dates;
 
 const _isWeekDay = date => {
   const numberOfDay = date.day();
