@@ -26,6 +26,6 @@ const _courtWithSpots = court => _courtSpots(court)
 const _notifySpots = courtsWithSpots => telegramApi.send(courtsWithSpots);
 
 export default () => Promise.map(courts, _courtWithSpots, { concurrency })
-.tap(console.log)
+.tap(spots => _.forEach(spots, it => console.log({ ...it, spots: _.map(it.spots, s => moment(s).format("LLLL")) })))
 .then(_notifySpots)
 .catch(console.log);
