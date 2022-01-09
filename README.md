@@ -1,5 +1,8 @@
 ## Setting up the environment
-`heroku git:remote -a basket-spots-notifier`
+```
+sudo snap install --classic heroku && \
+heroku git:remote -a basket-spots-notifier
+```
 
 ## Setting env vars
 - Locally: name a file `local.env` in the root directory with the format
