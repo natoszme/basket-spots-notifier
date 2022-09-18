@@ -16,3 +16,4 @@ You can download the production ones by using `npm run get-config`
 ## Sending the Telegram notification
 - Locally: `npm run now`
 - In production: `npm run production`
+
